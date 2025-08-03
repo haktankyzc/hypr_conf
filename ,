@@ -25,11 +25,7 @@
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
 monitor=eDP-1,preferred,auto, 1
-monitor=HDMI-A-1,preferred,auto,1
-monitor=HDMI-A-1,addreserved,50,50,50,50
-
-#If you want second screen to be on the left,
-monitor=HDMI-A-1,1920x1080@60,-1920x0,1
+monitor=HDMI-A-1,1920x1080@60,auto,1
 
 ##############################
 ### WORKSPACES OF MONITORS ###
@@ -60,7 +56,7 @@ workspace=15,monitor:HDMI-A-1
 # Set programs that you use
 $terminal = kitty
 $fileManager = thunar
-$menu = rofi -show drun
+$menu = wofi --show drun
 $browser = firefox  
 $code_editor = code
 
@@ -141,7 +137,7 @@ decoration {
 
 # https://wiki.hyprland.org/Configuring/Variables/#animations
 animations {
-    enabled = yes
+    enabled = no
 
     # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
@@ -203,7 +199,7 @@ misc {
 
 # https://wiki.hyprland.org/Configuring/Variables/#input
 input {
-    kb_layout = us
+    kb_layout = tr
     kb_variant =
     kb_model =
     kb_options =
@@ -242,7 +238,6 @@ $mainMod = SUPER # Sets "Windows" key as main modifier
 bind = $mainMod, Q, exec, $terminal
 bind = $mainMod, C, killactive,
 bind = $mainMod, M, exit,
-bind = $mainMod, L, exec, kitty -e flipclock -3 
 bind = $mainMod, E, exec, $fileManager
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, R, exec, $menu
